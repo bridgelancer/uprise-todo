@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Todo(onClick, completed, todo_text){
+function Todo({ todo_text, onClick, completed } ){
   return (
     <li
       onClick={onClick}
