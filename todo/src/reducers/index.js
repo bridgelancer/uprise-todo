@@ -11,7 +11,7 @@ function todos(state = [], action) {
         ...state,
         {
           id: action.id,
-          text: action.text,
+          todo_text: action.todo_text,
           completed: false
         }
       ]

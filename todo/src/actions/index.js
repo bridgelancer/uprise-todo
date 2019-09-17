@@ -6,7 +6,7 @@ export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const addTodo = text => ({
     type: ADD_TODO,
     id: nextId++,
-    text
+    todo_text: text
 })
 
 export const toggleTodo = id => ({

@@ -1,15 +1,15 @@
 import React from 'react'
 import Todo from './Todo'
 
-function TodoList({todos, toggleToDo}) {
-  console.log(todos)
+function TodoList({todos, toggleTodo}) {
+  console.log(todos, toggleTodo)
   return (
       todos.map(todo =>
         <ul key={todo.id}>
           <Todo
           key={todo.id}
           {...todo}
-          onClick={() => toggleToDo(todo.id)}
+          onClick={() => toggleTodo(todo.id)}
           />
         </ul>
       )
