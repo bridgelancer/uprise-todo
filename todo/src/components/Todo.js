@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Todo({ todo_text, onClick, completed } ){
+function Todo({ id, todo_text, onClick, completed } ){
+  console.log('completed: ', completed)
   return (
     <li
       onClick={onClick}
@@ -8,7 +9,7 @@ function Todo({ todo_text, onClick, completed } ){
         textDecoration: completed ? 'line-through' : 'none'
       }}
     >
-      {todo_text}
+    {id}, {todo_text}, {completed.toString()}
     </li>
   )
 }

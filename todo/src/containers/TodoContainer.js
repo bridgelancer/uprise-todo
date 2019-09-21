@@ -3,7 +3,8 @@ import { toggleTodo } from '../actions'
 import TodoList from '../components/TodoList'
 
 const getIncompleteTodos = (todos) => {
-  return todos.filter(t => !t.completed)
+  // return todos.filter(t => !t.completed)
+  return todos
 }
 
 const mapStateToProps = state => ({
