@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
+import { toggleTodo, editTodo} from '../actions'
 import TodoList from '../components/TodoList'
 
 const getIncompleteTodos = (todos) => {
@@ -12,7 +12,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  toggleTodo: id => dispatch(toggleTodo(id)),
+  editTodo: (id, text) => dispatch(editTodo(id, text))
 })
 
 export default connect(

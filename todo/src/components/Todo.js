@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import EditTodo from '../containers/EditForm';
 
-function Todo({ id, todo_text, onClick, completed } ){
+function Todo({ id, todo_text, onToggle, onEdit, completed } ){
 
   return (
     <li
@@ -11,10 +12,11 @@ function Todo({ id, todo_text, onClick, completed } ){
     >
     {id}, {todo_text}, {completed.toString()}
     <Button variant='contained' size='small'
-            onClick={onClick}>
+            onClick={onToggle}>
       Toggle
     </Button>
 
+    <EditTodo onEdit={onEdit}/>
     </li>
   )
 }

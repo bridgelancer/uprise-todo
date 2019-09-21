@@ -2,9 +2,11 @@ import { combineReducers } from 'redux';
 import {
   ADD_TODO,
   TOGGLE_TODO,
+  EDIT_TODO,
 } from '../actions';
 
 function todos(state = [], action) {
+  console.log(state, action)
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -20,6 +22,16 @@ function todos(state = [], action) {
         if (id === action.id) {
           return Object.assign({}, todo, {
             completed: !todo.completed
+          });
+        }
+        return todo;
+      })
+    case EDIT_TODO:
+      return state.map((todo, id) => {
+        console.log(action.id, id, todo.todo_text, action.todo_text)
+        if (id === action.id) {
+          return Object.assign({}, todo, {
+            todo_text: action.todo_text
           });
         }
         return todo;
