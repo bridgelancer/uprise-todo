@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 import {
   ADD_TODO,
   ADD_FETCHED_TODO,
   TOGGLE_TODO,
   EDIT_TODO,
   DELETE_TODO
-} from '../actions';
+} from "../actions";
 
 function todos(state = [], action) {
   switch (action.type) {
@@ -17,7 +17,7 @@ function todos(state = [], action) {
           todo_text: action.todo_text,
           completed: false
         }
-      ]
+      ];
 
     case ADD_FETCHED_TODO:
       return [
@@ -27,17 +27,17 @@ function todos(state = [], action) {
           todo_text: action.todo_text,
           completed: action.isComplete
         }
-      ]
+      ];
 
     case TOGGLE_TODO:
-      return state.map((todo) => {
+      return state.map(todo => {
         if (todo.id === action.id) {
           return Object.assign({}, todo, {
             completed: !todo.completed
           });
         }
         return todo;
-      })
+      });
 
     case EDIT_TODO:
       return state.map((todo, id) => {
@@ -47,11 +47,11 @@ function todos(state = [], action) {
           });
         }
         return todo;
-      })
+      });
 
     case DELETE_TODO:
-      console.log(state, action.id)
-      return state.filter((todo) => todo.id !== action.id)
+      console.log(state, action.id);
+      return state.filter(todo => todo.id !== action.id);
 
     default:
       return state;
@@ -60,6 +60,6 @@ function todos(state = [], action) {
 
 const todoApp = combineReducers({
   todos
-})
+});
 
-export default todoApp
+export default todoApp;
