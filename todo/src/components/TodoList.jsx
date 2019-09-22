@@ -1,5 +1,5 @@
 import React from "react";
-import Todo from "./Todo";
+import Todo from "./Todo.jsx";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";

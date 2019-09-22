@@ -1,5 +1,5 @@
 import React from "react";
-import EditTodo from "../containers/EditForm";
+import EditTodo from "../containers/EditForm.jsx";
 
 import Button from "@material-ui/core/Button";
 import Table from "@material-ui/core/Table";

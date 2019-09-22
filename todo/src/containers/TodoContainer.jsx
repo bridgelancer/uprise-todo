@@ -2,13 +2,8 @@ import { connect } from "react-redux";
 import { toggleTodo, editTodo, deleteTodo } from "../actions";
 import TodoList from "../components/TodoList";
 
-const getIncompleteTodos = todos => {
-  // return todos.filter(t => !t.completed)
-  return todos;
-};
-
 const mapStateToProps = state => ({
-  todos: getIncompleteTodos(state.todos)
+  todos: todos
 });
 
 const mapDispatchToProps = dispatch => ({
