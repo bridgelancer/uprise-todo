@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import {
   ADD_TODO,
+  ADD_FETCHED_TODO,
   TOGGLE_TODO,
   EDIT_TODO,
 } from '../actions';
@@ -17,6 +18,17 @@ function todos(state = [], action) {
           completed: false
         }
       ]
+
+    case ADD_FETCHED_TODO:
+      return [
+        ...state,
+        {
+          id: action.id,
+          todo_text: action.todo_text,
+          completed: action.isComplete
+        }
+      ]
+
     case TOGGLE_TODO:
       return state.map((todo, id) => {
         if (id === action.id) {

@@ -34,5 +34,4 @@ function TodoList({todos, toggleTodo, editTodo}) {
   )
 }
 
-
 export default TodoList

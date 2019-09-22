@@ -4,7 +4,6 @@ import { addTodo } from '../actions'
 
 function TodoForm({dispatch}){
     let input
-    console.log(dispatch)
 
     return (
           <div>
