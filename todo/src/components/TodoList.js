@@ -7,12 +7,13 @@ import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 
-function TodoList({todos, toggleTodo, editTodo}) {
+function TodoList({todos, toggleTodo, editTodo, deleteTodo}) {
   const rows = todos.map(todo => (<Todo
                         key={todo.id}
                         {...todo}
                         onToggle={() => toggleTodo(todo.id)}
                         onEdit={(text) => editTodo(todo.id, text)}
+                        onDelete={() => deleteTodo(todo.id)}
                       />
                   )
               )

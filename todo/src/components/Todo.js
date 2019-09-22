@@ -8,7 +8,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 
-function Todo({ id, todo_text, onToggle, onEdit, completed } ){
+function Todo({ id, todo_text, onToggle, onEdit, onDelete, completed }){
 
   return (
     <>
@@ -22,6 +22,10 @@ function Todo({ id, todo_text, onToggle, onEdit, completed } ){
     </Button>
 
     <EditTodo onEdit={onEdit}/>
+
+    <Button variant='contained' size='small' onClick={onDelete}>
+      Delete
+    </Button>
     </>
   )
 }

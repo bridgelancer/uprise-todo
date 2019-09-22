@@ -4,10 +4,10 @@ import {
   ADD_FETCHED_TODO,
   TOGGLE_TODO,
   EDIT_TODO,
+  DELETE_TODO
 } from '../actions';
 
 function todos(state = [], action) {
-  console.log(state, action)
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -30,24 +30,29 @@ function todos(state = [], action) {
       ]
 
     case TOGGLE_TODO:
-      return state.map((todo, id) => {
-        if (id === action.id) {
+      return state.map((todo) => {
+        if (todo.id === action.id) {
           return Object.assign({}, todo, {
             completed: !todo.completed
           });
         }
         return todo;
       })
+
     case EDIT_TODO:
       return state.map((todo, id) => {
-        console.log(action.id, id, todo.todo_text, action.todo_text)
-        if (id === action.id) {
+        if (todo.id === action.id) {
           return Object.assign({}, todo, {
             todo_text: action.todo_text
           });
         }
         return todo;
       })
+
+    case DELETE_TODO:
+      console.log(state, action.id)
+      return state.filter((todo) => todo.id !== action.id)
+
     default:
       return state;
   }
