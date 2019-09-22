@@ -2,10 +2,6 @@ import React from "react";
 import EditTodo from "../containers/EditForm.jsx";
 
 import Button from "@material-ui/core/Button";
-import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableBody from "@material-ui/core/TableBody";
-import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 
 function Todo({ id, todo_text, onToggle, onEdit, onDelete, completed }) {

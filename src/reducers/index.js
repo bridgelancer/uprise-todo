@@ -50,7 +50,6 @@ function todos(state = [], action) {
       });
 
     case DELETE_TODO:
-      console.log(state, action.id);
       return state.filter(todo => todo.id !== action.id);
 
     default:

@@ -5,7 +5,6 @@ import { addFetchedTodo } from "../actions";
 const url = "https://jsonplaceholder.typicode.com/todos";
 
 function dispatchFetchedTodo(dispatch, todos) {
-  console.log(todos);
   let kept_todos = todos.slice(0, 50);
 
   for (let key in kept_todos) {
